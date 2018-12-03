@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   day1.c                                             :+:      :+:    :+:   */
+/*   1_day1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 10:19:59 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/03 13:33:01 by bwan-nan         ###   ########.fr       */
+/*   Created: 2018/12/03 17:03:35 by bwan-nan          #+#    #+#             */
+/*   Updated: 2018/12/03 17:03:37 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../libft/libft.h"
+#include "../../libft/libft.h"
 #include <fcntl.h>
 
 int			main(int ac, char **av)
