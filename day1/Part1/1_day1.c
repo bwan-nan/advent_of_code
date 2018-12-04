@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:03:35 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/03 17:03:37 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/04 11:40:06 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 int			main(int ac, char **av)
 {
-	char	**tab;
 	char	*line;;
 	int	*new_tab;
 	int	result;
