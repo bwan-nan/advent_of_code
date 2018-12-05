@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:04:01 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/05 21:33:33 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/05 23:18:27 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ static void		create_tab(char *str, int i)
 		if (ft_intchr(new_tab, new_tab[k], k))
 		{
 			ft_putnbr(new_tab[k]);
+		//	show_tab(new_tab, k + 1);
 			ft_putstr("\n");
 			free(new_tab);
 			free(movements);
