@@ -6,17 +6,33 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:04:01 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/04 21:36:25 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/05 21:33:33 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../../libft/libft.h"
 #include <fcntl.h>
 #include "day1_part2.h"
 
-static int			ft_intchr(int *tab, int frequency, int len)
+static void		show_tab(int *tab, int len)
+{
+	int i;
+
+	i = 0;
+	while (i < len)
+	{
+		ft_putnbr(i);
+		ft_putstr("  ");
+		ft_putnbr(tab[i]);
+		ft_putchar('\n');
+		i++;
+	}
+}
+
+static int		ft_intchr(int *tab, int frequency, int len)
 {
 	int i;
 
@@ -30,59 +46,74 @@ static int			ft_intchr(int *tab, int frequency, int len)
 	return (0);
 }
 
-int					main(int ac, char **av)
+static void		create_tab(char *str, int i)
 {
+	int		*movements;
+	int		*new_tab;
+	int		fd;
+	int		movement;
+	int		frequency;
+	int		k;
 	char		*line;
-	int			*tmp;
-	int			*tab;
-	int			change;
-	int			frequency;
-	int			fd;
-	int			i;
-	int			stop;
+	int		*tmp;
+	int		stop;
 
-	frequency = 0;
-	i = 1;
-	if (!tab)
+	movement = 0;
+	if (!movements)
 	{
-		if (!(tab = (int *)malloc(sizeof(int) * 1)))
-			return (-1);	
-		tab[0] = 0;
+		if (!(movements = (int *)malloc(sizeof(int) * 1)))
+			return ;	
+		movements[0] = 0;
 	}
-	if (ac == 2)
+	fd = open(str, O_RDONLY);
+	while (get_next_line(fd, &line))
 	{
-		fd = open(av[1], O_RDONLY);
-		while (get_next_line(fd, &line))
+		movement = ft_atoi(line);
+		tmp = movements;
+		if (!(movements = malloc(sizeof(int) * (i + 1))))
+			return ;
+		ft_memcpy(movements, tmp, sizeof(int) * i);
+		free(tmp);
+		movements[i] = ft_atoi(line);
+
+		i++;
+	}
+	k = i;
+	stop = k;
+	i = 1;
+	new_tab = ft_memalloc(sizeof(int) * (k + 1));
+	new_tab[0] = 0;
+	while (i < k + 1)
+	{
+		new_tab[i] = new_tab[i - 1] + movements[i - 1];
+		i++;
+	}
+	i = 0;
+	while (i < ++k)
+	{
+		if (i == stop)
+			i = 0;
+		tmp = new_tab;
+		if (!(new_tab = malloc(sizeof(int) * (k + 1))))
+			return ;
+		ft_memcpy(new_tab, tmp, sizeof(int) * k);
+		free(tmp);
+		new_tab[k] = new_tab[k - 1] + movements[i];
+		if (ft_intchr(new_tab, new_tab[k], k))
 		{
-			change = ft_atoi(line);
-			frequency += change;
-			if (!tmp)
-			{
-				tmp = tab;
-				if (!(tab = (int *)malloc(sizeof(int) * (i + 1))))
-					return (-1);
-				ft_memcpy(tab, tmp, sizeof(tab));
-				tab[i] = frequency;
-			}
-			else
-			{
-				tmp = tab;
-				if (!(tab = (int *)malloc(sizeof(int) * (i + 1))))
-					return (-1);
-				ft_memcpy(tab, tmp, sizeof(*tmp));
-				tab[i] = frequency;
-				free(tmp);
-			}
-			if (ft_intchr(tab, tab[i], i))
-			{
-				ft_putnbr(tab[i]);
-				ft_putchar('\n');
-				return (1);
-			}
-			ft_putnbr(tab[i]);
-			ft_putchar('\n');
+			ft_putnbr(new_tab[k]);
+			ft_putstr("\n");
+			free(new_tab);
+			free(movements);
+			return ;
 		}
 		i++;
 	}
+}
+
+int			main(int ac, char **av)
+{
+	if (ac == 2)
+		create_tab(av[1], 0);
 	return (0);
 }

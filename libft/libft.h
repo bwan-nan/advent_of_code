@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:54:15 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/03 13:14:44 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/05 19:33:13 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstclr(t_list *alst);
 char				**ft_split_whitespaces(char *str);
 int				get_next_line(const int fd, char **line);
+void				*ft_realloc(void *ptr, size_t size);
 
 #endif
