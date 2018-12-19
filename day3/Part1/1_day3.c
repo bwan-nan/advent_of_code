@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/1000 20:40:31 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/17 18:33:46 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/19 18:28:50 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,10 +123,10 @@ int			main(int ac, char **av)
 			if (!(map[i] = ft_memalloc(sizeof(char) * 1000)))
 				return (-1);
 			ft_memset(map[i], '.', 1000);
-			map[i][1000] = '\0';
+			map[i][999] = '\0';
 			i++;
 		}
-		map[1000] = 0;
+		map[999] = 0;
 		read_input(av[1], map);
 		//display_map(map);
 		delete_map(map);

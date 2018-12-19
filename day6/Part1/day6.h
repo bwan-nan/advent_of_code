@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   day6.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwan-nan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 17:57:53 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/19 16:54:54 by bwan-nan         ###   ########.fr       */
+/*   Created: 2018/12/19 15:43:13 by bwan-nan          #+#    #+#             */
+/*   Updated: 2018/12/19 18:10:52 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#ifndef DAY6_H
+# define DAY6_H
 
-void	*ft_memset(void *b, int c, size_t len)
+typedef struct		s_point
 {
-	size_t			i;
-	unsigned char	*str;
-
-	i = 0;
-	str = (unsigned char *)b;
-	while (i < len)
-	{
-		str[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
-}
+	int				x;
+	int				y;
+	int				element_number;
+	struct s_point	*next;
+}					t_point;
+#endif

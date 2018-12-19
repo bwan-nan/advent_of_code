@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/1000 20:40:31 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/17 19:25:09 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/19 15:44:26 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ static void		delete_map(char **map)
 	int i;
 
 	i = 0;
-	while (map[i])
+	while (i < 1000)
 	{
 		free(map[i]);
 		i++;
 	}
+	(void)map;
 }
 
 static void		update_map(char **map, char *str)
