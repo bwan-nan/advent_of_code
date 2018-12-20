@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwan-nan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 1018/10/19 15:15:24 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/19 18:28:52 by bwan-nan         ###   ########.fr       */
+/*   Created: 2018/12/18 15:15:24 by bwan-nan          #+#    #+#             */
+/*   Updated: 2018/12/20 15:41:21 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,49 @@ static int		get_manhattan_distance(int x, int y, int to_x, int to_y)
 	return (y_distance + x_distance);
 }
 
+static int		find_biggest_area(char **map, t_point *points_list)
+{
+	t_point *elem;
+	int		i;
+	int		j;
+	int		count;
+	int		largest_area;
+
+	largest_area = 0;
+	elem = points_list;
+	while (elem)
+	{
+		count = 0;
+		j = 0;	
+		while (map[j])
+		{
+			if (j == 0 || j == 353)
+			{
+				if (ft_strchr(map[j], elem->element_number + 64))
+					break ;
+			}
+			if (map[j][0] == elem->element_number + 64 || map[j][353] == elem->element_number + 64)
+				break ;
+			i = 0;
+			while (map[j][i])
+			{
+				if (map[j][i] == elem->element_number + 64)
+					count++;
+				i++;
+			}
+			j++;
+		}
+		if (count > largest_area)
+		{
+			largest_area = count;
+			ft_putnbr(largest_area);
+			ft_putchar('\n');
+		}
+		elem = elem->next;
+	}
+	return (largest_area);
+}
+
 static void		fill_map(char **map, t_point *points_list)
 {
 	int			i;
@@ -58,17 +101,17 @@ static void		fill_map(char **map, t_point *points_list)
 			while (elem)
 			{
 				dist = get_manhattan_distance(i, j, elem->x, elem->y);
-				printf("%d ", dist);
+				//	printf("%d ", dist);
 				if (elem->element_number == 1 || dist < min_dist)
 				{
-					char_to_write = elem->element_number + 48;
+					char_to_write = elem->element_number + 64;
 					min_dist = dist;
 				}
 				else if (dist == min_dist)
 					char_to_write = '.';	
 				elem = elem->next;
 			}
-			printf("i = %d j = %d min_dist = %d\n", i, j, min_dist);
+			//	printf("i = %d j = %d min_dist = %d\n", i, j, min_dist);
 			map[j][i] = char_to_write;
 			i++;
 		}
@@ -83,8 +126,8 @@ static void		update_map(char **map, t_point *points_list)
 	elem = points_list;
 	while (elem)
 	{
-		printf("y = %d ; x = %d\n", elem->y, elem->x);
-		map[elem->y][elem->x] = elem->element_number + 48;
+		//printf("y = %d ; x = %d\n", elem->y, elem->x);
+		map[elem->y][elem->x] = elem->element_number + 64;
 		elem = elem->next;
 	}
 }
@@ -135,9 +178,10 @@ static void		read_input(char *input, char **map)
 		ft_strdel(&line);
 	}
 	update_map(map, points_list);
-	display_map(map);
 	fill_map(map, points_list);
 	display_map(map);
+	ft_putnbr(find_biggest_area(map, points_list));
+	ft_putchar('\n');
 	close(fd);
 }
 
@@ -148,18 +192,17 @@ int				main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		if (!(map = malloc(sizeof(char *) * 10)))
+		if (!(map = malloc(sizeof(char *) * 355)))
 			return (-1);	
 		i = 0;
-		while (i < 10)
+		while (i < 355)
 		{
-			if (!(map[i] = malloc(sizeof(char) * 10)))
+			if (!(map[i] = ft_strnew(354)))
 				return (-1);
-			map[i] = ft_memset(map[i], '.', 10);
-			map[i][10] = '\0';
+			ft_memset(map[i], '.', 354);
 			i++;
 		}
-		map[10] = 0;
+		map[355] = 0;
 		read_input(av[1], map);
 	}
 	return (0);
