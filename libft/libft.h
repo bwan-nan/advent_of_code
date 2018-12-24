@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:54:15 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/05 19:33:13 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/23 18:42:46 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
-# define BUFF_SIZE 1
+# define BUFF_SIZE 10000
 
 typedef struct		s_list
 {
