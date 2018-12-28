@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 11:42:36 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/24 11:54:13 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2018/12/28 14:47:32 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ int		main(int ac, char **av)
 			ft_strdel(&polymer);
 			letter++;
 		}
+		ft_strdel(&str);
 		ft_putnbr(minimum_len);
 		ft_putchar('\n');
 	}
