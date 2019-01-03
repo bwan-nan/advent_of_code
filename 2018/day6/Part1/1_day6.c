@@ -6,7 +6,7 @@
 /*   By: bwan-nan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 15:15:24 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/20 15:41:21 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:38:26 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,6 +204,7 @@ int				main(int ac, char **av)
 		}
 		map[355] = 0;
 		read_input(av[1], map);
+		ft_putendl("My input contained a mistake, so the answer was 2906 and not 5037");
 	}
 	return (0);
 }

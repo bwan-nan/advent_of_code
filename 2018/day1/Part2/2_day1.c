@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:04:01 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/05 23:18:27 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:18:26 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "../../libft/libft.h"
 #include <fcntl.h>
 #include "day1_part2.h"
-
+/*
 static void		show_tab(int *tab, int len)
 {
 	int i;
@@ -31,7 +31,7 @@ static void		show_tab(int *tab, int len)
 		i++;
 	}
 }
-
+*/
 static int		ft_intchr(int *tab, int frequency, int len)
 {
 	int i;
@@ -116,5 +116,7 @@ int			main(int ac, char **av)
 {
 	if (ac == 2)
 		create_tab(av[1], 0);
+	else
+		ft_putendl("usage: ./p2 day1_input.txt");
 	return (0);
 }

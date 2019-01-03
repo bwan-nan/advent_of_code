@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 12:11:23 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/07 14:57:46 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:25:52 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,7 @@ int				main(int ac, char **av)
 {
 	if (ac == 2)
 		read_file(av[1]);
+	else
+		ft_putendl("usage: ./p2 day2_input.txt");
 	return (0);
 }

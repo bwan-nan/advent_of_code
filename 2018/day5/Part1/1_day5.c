@@ -6,7 +6,7 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:58:06 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/28 14:58:09 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:33:02 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ int		main(int ac, char **av)
 		str_len = ft_strlen(str);
 		ft_strdel(&str);
 		ft_putnbr(str_len);
-		ft_putchar('\n');
 	}
+	else
+		ft_putstr("usage: ./p1 day5_input.txt");
+	ft_putchar('\n');
 	return (0);
 }

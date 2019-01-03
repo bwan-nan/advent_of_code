@@ -6,18 +6,13 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 12:20:19 by bwan-nan          #+#    #+#             */
-/*   Updated: 2018/12/06 18:45:57 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:24:36 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft/libft.h"
 #include <unistd.h>
 #include <fcntl.h>
-
-static int		checksum(int a, int b)
-{
-	return (a * b);
-}
 
 static void		count_it_all(char *str, int *a, int *b)
 {
@@ -75,10 +70,12 @@ int				main(int ac, char **av)
 	if (ac == 2)
 	{
 		count_it_all(av[1], &double_letters, &triple_letters);	
-		result = checksum(double_letters, triple_letters);
+		result = double_letters * triple_letters;
 		ft_putstr("result = ");
 		ft_putnbr(result);
-		ft_putchar('\n');
 	}
+	else
+		ft_putstr("usage: ./p1 day2_input.txt");
+	ft_putchar('\n');
 	return (0);
 }
