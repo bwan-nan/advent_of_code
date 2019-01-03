@@ -10,4 +10,4 @@ For each days, the compilation / installation rules are described in a file name
 
 ## Further informations
 
-> In 2018, I tried to solve each challenges in C.
+> In 2018, I tried to solve each challenge in C.
