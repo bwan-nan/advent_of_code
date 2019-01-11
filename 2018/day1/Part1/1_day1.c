@@ -6,13 +6,13 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:03:35 by bwan-nan          #+#    #+#             */
-/*   Updated: 2019/01/03 11:10:39 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/11 13:59:00 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../../libft/libft.h"
+#include "libft.h"
 #include <fcntl.h>
 
 int			main(int ac, char **av)

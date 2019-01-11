@@ -6,11 +6,11 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 13:32:07 by bwan-nan          #+#    #+#             */
-/*   Updated: 2019/01/11 13:32:08 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/11 14:01:25 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
+#include "libft.h"
 #include "day6.h"
 #include <stdlib.h>
 #include <fcntl.h>

@@ -1,5 +1,5 @@
 Part1 :
-clang Part1/1_day6.c ../libft/libft.a -o p1
+clang -I ../libft Part1/1_day6.c ../libft/libft.a -o p1
 
 Part2 :
-clang Part2/2_day6.c ../libft/libft.a -o p2
+clang -I ../libft Part2/2_day6.c ../libft/libft.a -o p2

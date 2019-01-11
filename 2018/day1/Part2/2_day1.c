@@ -6,14 +6,14 @@
 /*   By: bwan-nan <bwan-nan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:04:01 by bwan-nan          #+#    #+#             */
-/*   Updated: 2019/01/03 11:18:26 by bwan-nan         ###   ########.fr       */
+/*   Updated: 2019/01/11 13:59:17 by bwan-nan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../libft/libft.h"
+#include "libft.h"
 #include <fcntl.h>
 #include "day1_part2.h"
 /*
