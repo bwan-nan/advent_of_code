@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 sum = 0
-File.open('input1.txt').each do |line|
+File.open('input.txt').each do |line|
   total_fuel = 0
   fuel_required = line.to_i / 3 - 2 
   while fuel_required >= 0 do
