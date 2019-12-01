@@ -11,4 +11,6 @@ For each day, the compilation rules are described in a file named
 
 ## Further informations
 
-> In 2018, I tried to solve each problem in C.
+Language used:
+> 2018: C
+> 2019: Ruby
