@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
-sum = 0
-File.open('input.txt').each do |line|
-  sum += ( line.to_i / 3 ) - 2 
+sum = File.open('input.txt').inject(0) do |res, line|
+  res + line.to_i / 3 - 2 
 end
 
 puts sum
