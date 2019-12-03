@@ -12,5 +12,5 @@ For each day, the compilation rules are described in a file named
 ## Further informations
 
 Language used:
-> 2018: C
+> 2018: C<br />
 > 2019: Ruby
