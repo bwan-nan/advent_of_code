@@ -1,7 +1,8 @@
 #!/usr/bin/ruby
 
 def check_order(num)
-  num[0].to_i <= num[1].to_i && num[1].to_i <= num[2].to_i && num[2].to_i <= num[3].to_i && num[3].to_i <= num[4].to_i && num[4].to_i <= num[5].to_i
+  sorted_array = num.chars.sort
+  num.chars == sorted_array
 end
 
 def at_least_two_adjacent_digits(num)
