@@ -7,7 +7,4 @@ This repo contains my answers to some of these programming problems.
 ## Programming language used:
 
 > 2018: C<br />
-> 2019: Ruby<br />
-> 2020: Ruby
-> 2021: Ruby
-> 2022: Ruby
+> 2019 -> 2022: Ruby<br />
