@@ -7,7 +7,6 @@ EQUALITY = 0
 
 def compare(a, b)
   return UNORDERED if a && !b
-  #puts "comparing #{a} and #{b}"
   return ORDERED if !a && b
 
   if a.class == Integer && b.class == Integer
@@ -33,8 +32,8 @@ end
 
 pairs = File.read('input.txt').split("\n\n").map {|l| l.split("\n").map {|p| JSON.parse(p)}}
 
-sum = EQUALITY
-pairs.each_with_index {|(a, b), i| sum += i + 1 if compare(a, b) >= EQUALITY}
+sum = 0
+pairs.each_with_index {|(a, b), i| sum += i + 1 if compare(a, b) >= 0}
 puts sum
 
 items = pairs.flatten(1)
