@@ -71,7 +71,7 @@ def hand_strength(hand, part)
 
   card_to_mimick = group_cards_by_value(hand.chars)
                     .except("J")
-                    .sort_by {|card, occurence| -occurence}
+                    .sort_by {|card, occurrence| -occurrence}
                     &.first&.first || "J"
 
   hand_strength(hand.gsub("J", card_to_mimick), "part1")
@@ -110,17 +110,9 @@ def calculate_winnings(hands)
   end.sum
 end
 
-def part1(lines)
+def run(lines, part)
   hands = lines.map do |hand, bid|
-    build_hands_details(hand, bid, "part1")
-  end.sort {|h1, h2| compare(h1, h2)}
-
-  calculate_winnings(hands)
-end
-
-def part2(lines)
-  hands = lines.map do |hand, bid|
-    build_hands_details(hand, bid, "part2")
+    build_hands_details(hand, bid, part)
   end.sort {|h1, h2| compare(h1, h2)}
 
   calculate_winnings(hands)
@@ -128,5 +120,5 @@ end
 
 lines = File.readlines('input.txt').map {|l| l.strip.split(" ")}
 
-puts part1(lines)
-puts part2(lines)
+puts run(lines, "part1")
+puts run(lines, "part2")
