@@ -12,8 +12,8 @@ nodes = {}
 
 lines.map do |line|
   start, connections = line.split(" = ")
-  connections = connections.gsub(/\(|\)/, "").split(", ")
-  nodes[start] = {"L" => connections[0], "R" => connections[1]}
+  left, right = connections.gsub(/\(|\)/, "").split(", ")
+  nodes[start] = {"L" => left, "R" => right}
 end
 
 puts compute_steps_to_reach_stop("AAA", "ZZZ", nodes, instructions)
